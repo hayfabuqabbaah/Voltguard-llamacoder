@@ -1,0 +1,54 @@
+# VoltGuard - متطلبات Docker
+# ==========================
+
+# Base Images
+# -----------
+# Node.js: node:18-alpine
+# Python: python:3.11-slim
+# Nginx: nginx:alpine
+
+# System Dependencies
+# -------------------
+# curl
+# git
+# build-essential
+# python3-dev
+# nodejs
+# npm
+
+# Ports
+# -----
+# Frontend: 3000
+# Backend: 8000
+# Nginx: 80/443
+
+# Volumes
+# -------
+# ./src:/app/src
+# ./dist:/app/dist
+# ./logs:/app/logs
+# ./data:/app/data
+
+# Environment Variables
+# ---------------------
+NODE_ENV=production
+PYTHON_ENV=production
+API_URL=http://localhost:8000
+DATABASE_URL=postgresql://user:pass@localhost/db
+
+# Health Checks
+# -------------
+# Frontend: curl -f http://localhost:3000
+# Backend: curl -f http://localhost:8000/health
+
+# Resource Limits
+# ---------------
+# Memory: 512MB
+# CPU: 0.5 cores
+# Disk: 1GB
+
+# Network
+# -------
+# Internal network communication
+# External port mapping
+# SSL termination
